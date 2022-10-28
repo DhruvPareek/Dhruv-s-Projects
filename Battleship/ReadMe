@@ -14,3 +14,5 @@ implementation also keeps track of the game for the player with two different bo
 allows the player to see where they have attacked/hit the opponent on one board and where
 their ships are along with where the opponent has attacked/hit on another board.
 The game will also detect when the game is over.
+
+The functions I implemented fall in the Board.cpp, Game.cpp, and Player.cpp files.
