@@ -1,0 +1,21 @@
+This is a UCLA project where I built a simple code compiler that enters and exits scopes
+into a depth of 10+ scopes. The compiler reads input lines with brackets which enter/exit scopes and
+variables being declared. The compiler should run through an input of brackets and variables,
+then it should recognize if the input is not valid for any reason. These reasons include calling
+variables from a scope that we have already exited or there being extra closing brackets 
+that signifiy leaving a scope when we have already exited out of all the scopes. The file I
+implemented was NameTable.cpp.
+
+In order to do this, I created two hash tables where we have an array of size 19997 and each element in the
+array is a List(https://cplusplus.com/reference/list/list/) that is made up of Declarations structs. Using both
+hash tables together, refering back to variables in different scopes along with adding variables that have been
+declared becomes a fast process.
+
+You can find these hashtables in the NameTable.cpp file. One of the hashtables, "sortedByDepth", is organized
+so that the nth element in the array is a list that contains all of the variables from the nth scope. The
+other hashtable, "sortedRandomly", adds each variable to the list at an element n of the array. The element
+n in the array is decided by hashing the name of the variable so that we end up with a random number
+between 0 and 19997.
+
+The NameTable.cpp file contains implementations of helper functions which I implemented that are called
+when input of lines of code are interpreted by main.cpp.
