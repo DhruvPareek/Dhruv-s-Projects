@@ -1,0 +1,30 @@
+In this project, I only modified the mm.c file. The purpose of this project was to
+make an implementation of heap storage. The free and allocated blocks in the storage
+were identified by a struct "block_t" defined at the top of the mm.c file. We had
+to optimize the heap storage to be as efficient as possible in speed and size. This
+means the implementation needed to find free blocks of the correct size to use as
+storage as fast as possible and allocate free blocks in the most efficient manner so
+that the least amount of space was wasted.
+
+For the implementation, I made a segregated free list where there are 10 different doubly
+linked list which link together free blocks of similar sizes:
+static block_t *head5 = NULL; //0-32 bytes        0-2^5 bytes
+static block_t *head6 = NULL; //33-64 bytes       2^5 +1 to 2^6
+static block_t *head7 = NULL;  //65-128 bytes      2^6 +1 to 2^7
+static block_t *head8 = NULL;  //129-256 bytes     2^7 +1 to 2^8
+static block_t *head9 = NULL;  //257-512 bytes     2^8 +1 to 2^9
+static block_t *head10 = NULL;  //513-1024 bytes    2^9 +1 to 2^10
+static block_t *head11 = NULL;  //1025-2048 bytes   2^10 +1 to 2^11
+static block_t *head12 = NULL;  //2049-4096 bytes   2^11 +1 to 2^12
+static block_t *head13 = NULL;  //4097-8192 bytes   2^12 +1 to 2^13
+static block_t *headinf = NULL;  //8193+             2^13 +1 to inf
+
+When finding a new block to allocate, I used a First Fit search alogrithm to find
+the first block that has the proper size in one of these doubly linked lists.
+
+Some additional functions implemented:
+-A function to extend the size of the heap if we were allocating more space than originally
+was in the heap.
+-A coalescing function which would combine two adjacent free blocks into one larger free block.
+-Some debugging functions that would run through the heap to check that the implementation was
+efficient.
