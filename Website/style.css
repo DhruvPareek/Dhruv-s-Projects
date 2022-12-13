@@ -1,0 +1,101 @@
+
+/* setting text to center*/
+* {
+  box-sizing: border-box;
+}
+
+div.a{
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+div.b{
+  font-family: Georgia, serif;
+  text-align: left;
+ // border: 6px solid gray;
+  Padding: 0px 10px;
+  margin: 0px 340px;
+  //background-color: #cccccc;
+}
+
+div.T{
+Padding: 20px 340px;
+text-align: center;
+font-family: Georgia, serif;
+}
+
+/* picture formatting*/
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+nav{
+display: flex;
+padding: 5%, 5%;
+justify-content: space-between;
+align-items: center;
+font-family: Georgia, serif;
+}
+
+.nav-links{
+flex: 1;
+padding: 10px;
+text-align: center;
+background-color: rgba(255, 255, 255, 0);
+}
+
+.nav-links ul li{
+list-style: none;
+display: inline-block;
+padding: 5px 8px;
+position: relative;
+background-color: #dddddde1;
+}
+
+.nav-links ul li a{
+display: block;
+padding: 5px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+background-color: rgb(255, 255, 255);
+}
+
+
+div.books{
+  width: 40%;
+  float:left;
+  font-family: Georgia, serif;
+  text-align: left;
+  border: 6px solid gray;
+  Padding: 0px 25px;
+  margin: 20px 70px;
+  //background-color: #cccccc;
+  border-style: inset;
+}
+
+div.songs{
+  float: right;
+  width:35%;
+  Padding: 0px 40px;
+  margin: 00px 85px;
+  border: 6px solid gray;
+  border-style: inset;
+  text-align: right;
+}
+
+div.movies{
+  width: 20%;
+  float: left;
+  border: 6px solid gray;
+  Padding: 0px 30px;
+  margin: 50px 180px;
+  text-align: left;
+  font-family: Georgia, serif;
+  border-style: inset;
+
+}
